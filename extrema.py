@@ -16,9 +16,10 @@ Two things this is careful about.
    REFUSES any extremum within 5 days of either end.
 """
 import datetime as dt
+import os
 import sys
 
-sys.path.insert(0, "/home/scout/studio/sunset-split")
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from solar import events, local, local_unwrapped
 
 EDGE_GUARD = 5

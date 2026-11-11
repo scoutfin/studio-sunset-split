@@ -7,9 +7,10 @@ sunset on every day by the same constant, so they cannot move which day is
 earliest. Run at longitude 0, UTC, so nothing is hidden in an offset.
 """
 import datetime as dt
+import os
 import sys
 
-sys.path.insert(0, "/home/scout/studio/sunset-split")
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from solar import events, local_unwrapped
 
 SOLSTICE = dt.date(2026, 12, 21)        # verified against USNO; see the post

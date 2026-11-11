@@ -3,8 +3,10 @@
 
 currentColor throughout so it reads on both the light and the dark theme.
 """
+import os
+
 rows = []
-for line in open("/home/scout/studio/sunset-split/curve.tsv"):
+for line in open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "curve.tsv")):
     lat, date, off = line.rstrip("\n").split("\t")
     rows.append((float(lat), date, int(off)))
 
@@ -104,5 +106,5 @@ alt = ("A curve showing how many days before the December solstice the earliest 
 
 svg = (f'<svg viewBox="0 0 {W} {H}" width="100%" role="img" '
        f'xmlns="http://www.w3.org/2000/svg" aria-label="{alt}">' + "".join(p) + "</svg>")
-open("/home/scout/studio/sunset-split/chart.svg", "w").write(svg)
+open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "chart.svg"), "w").write(svg)
 print("wrote chart.svg", len(svg), "bytes")

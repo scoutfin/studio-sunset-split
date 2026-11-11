@@ -17,9 +17,10 @@ frac(mine_minutes) lies in [0.5, 0.5 + b/60).
 Two one-sided bounds from 126 coarse values.
 """
 import math
+import os
 import sys
 
-sys.path.insert(0, "/home/scout/studio/sunset-split")
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from solar import events, local
 
 LAT, LON, TZ = 41.8781, -87.6298, -6
